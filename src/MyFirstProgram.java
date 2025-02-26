@@ -1,13 +1,15 @@
 import java.util.Scanner;
+import com.google.gson.Gson; //https://mvnrepository.com/artifact/com.google.code.gson/gson/2.12.1
 
 public class MyFirstProgram {
     public static void main(String[] args) {
         //Declare Variable
         String name;
+        String filePath = "D:\\Universitas Ciputra\\Semester 2\\OOP\\Lab1\\Assignment1\\First\\src\\funfact.json";
         String javaVer = System.getProperty("java.version");
 
         //Displaying welcome message
-        System.out.println("Hi! Welcome to my first program in Java");
+        System.out.println("\u001b[31m Hi! \u001b[35m Welcome to my first program in Java \u001b[0m");
 
         //Set up scanner for user input
         Scanner scanner = new Scanner (System.in);
@@ -37,7 +39,9 @@ public class MyFirstProgram {
         //change output display into its color
             
         //Displaying Funfact about Java
-        System.out.println("Here's a funJavaFact: ");  
+        FunFactReader funFactReader = new FunFactReader(filePath);
+        System.out.println("Here's a funJavaFact: ");
+        System.out.println(funFactReader.getRandomFact());
     
         scanner.close();
 
@@ -47,4 +51,7 @@ public class MyFirstProgram {
 }
 
 /* Bibliography : 
-Ansi - https://en.wikipedia.org/wiki/ANSI_escape_code */
+Ansi - https://en.wikipedia.org/wiki/ANSI_escape_code 
+     - https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#colors
+     
+     */
