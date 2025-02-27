@@ -32,16 +32,17 @@ public class MyFirstProgram {
 
         //Loading Animation
         for (int i = 0; i < 20; i++) {
-            System.out.print("\rLoading " + frames[i % frames.length]);
+            System.out.print("\r \u001B[32mLoading \u001B[0m" + frames[i % frames.length]);
             Thread.sleep(200);
         }
         System.out.println("\r                 ");
 
         //Displaying welcome message
-        System.out.println("\n*********************************************");
-        System.out.println("\n \u001b[31m Hi! \u001b[35m Welcome to my first program in Java! \u001b[0m \n");
-        System.out.println("*********************************************\n");
-        Thread.sleep(700);
+        //System.out.println("\n*********************************************");
+        //System.out.println("\n \u001b[31m Hi! \u001b[35m Welcome to my first program in Java! \u001b[0m \n");
+        //System.out.println("*********************************************\n");
+        //Thread.sleep(700);
+        WelcomeMessage.show();
 
         for (String line : art) {
             System.out.println(line);
@@ -53,7 +54,7 @@ public class MyFirstProgram {
         Scanner scanner = new Scanner (System.in);
 
         //Get user input
-        System.out.println("\nMy name is Inno, could I know your name?");
+        System.out.println("\n\n\u001B[34m       My name is Inno, could I know your name? \u001b[0m \n");
         System.out.print("Please type your name: ");
         name = scanner.nextLine();
 
@@ -61,7 +62,7 @@ public class MyFirstProgram {
         do {
             //If user input = "inno"
             if (name.equalsIgnoreCase("inno")) {
-                System.out.print("You're me?! Please type your name! ");
+                System.out.print("\u001B[31m You're me?! Please type your name! \u001B[0m");
                 //Get user input again
                 name = scanner.nextLine();
                 }
@@ -70,9 +71,10 @@ public class MyFirstProgram {
 
             
         //Personilized Greeting
-        System.out.println("Hi " + name + "! I'm glad to meet you");
+        System.out.println("\n Hi \u001B[35m" + name + "\u001B[0m! I'm glad to meet you");
 
         //Ask user their fav color
+
 
         //change output display into its color
             
