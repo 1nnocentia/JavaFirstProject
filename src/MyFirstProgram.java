@@ -32,21 +32,22 @@ public class MyFirstProgram {
 
 
         //Loading Animation
-        for (int i = 0; i < 20; i++) {
-            System.out.print("\r \u001B[32mLoading \u001B[0m" + frames[i % frames.length]);
-            Thread.sleep(200);
+        for (int i = 0; i < 20; i++) { //Looping for 20 times
+            System.out.print("\r \u001B[32mLoading \u001B[0m" + frames[i % frames.length]); //Loading teks and symbol animation
+            Thread.sleep(200); //hold for 0.2s
         }
-        System.out.println("\r                 ");
+        System.out.println("\r                 "); //overwrite the loading text with space
 
         //Displaying welcome message
         //System.out.println("\n*********************************************");
         //System.out.println("\n \u001b[31m Hi! \u001b[35m Welcome to my first program in Java! \u001b[0m \n");
         //System.out.println("*********************************************\n");
         //Thread.sleep(700);
-        WelcomeMessage.show();
+        WelcomeMessage.show(); //Call show() from WelcomeMessage class
 
-        for (String line : art) {
-            System.out.println(line);
+        //Looping for the Image (Symbol)
+        for (String line : art) { //line = each element in array called art
+            System.out.println(line); 
             Thread.sleep(200);
         }
 
@@ -56,7 +57,7 @@ public class MyFirstProgram {
         //Set up scanner for user input
         Scanner scanner = new Scanner (System.in);
 
-        //Get user input
+        //Get user input (string)
         System.out.println("\n\n\u001B[34m       My name is Inno, could I know your name? \u001b[0m \n");
         System.out.print("Please type your name: ");
         name = scanner.nextLine();
@@ -81,18 +82,21 @@ public class MyFirstProgram {
         System.out.print("Please type your color: ");
         favColour = scanner.nextLine().toLowerCase();
         
-        switch (favColour) {
+        //change output display into its colour
+        //Use Switch Case for the colour, default will be blue
+        switch (favColour) { 
             case "r" -> System.out.println("\u001B[31m");
             case "g" -> System.out.println("\u001B[32m");
             default -> System.out.println("\u001B[34m");
         }
-
-        //change output display into its colour
+        
             
         //Displaying Funfact about Java
         FunFactReader funFactReader = new FunFactReader(filePath);
         System.out.println("\u001B[1m Here's a funJavaFact: \n");
+        //Get getRandomFact from FunFactReader and display
         System.out.println(funFactReader.getRandomFact());
+        //reset color
         System.out.println("\u001B[0m");
     
         scanner.close();
@@ -107,5 +111,5 @@ public class MyFirstProgram {
 /* Bibliography : 
 Ansi - https://en.wikipedia.org/wiki/ANSI_escape_code 
      - https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#colors
-     
+Assist by ChatGPT
      */
