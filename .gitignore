@@ -1,1 +1,9 @@
 /src/Main.java
+/src/Art.java
+src/LoadingAnimation.java
+/src/WelcomeAnimation.java
+/src/Fireworks.java
+
+bin/Fireworks.class
+bin/LoadingAnimation.class
+bin/WelcomeAnimation.class
