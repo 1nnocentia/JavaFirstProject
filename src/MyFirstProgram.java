@@ -5,9 +5,9 @@ public class MyFirstProgram {
     public static void main(String[] args) throws InterruptedException {
         //Declare Variable
         String name;
-        String filePath = "D:\\Universitas Ciputra\\Semester 2\\OOP\\Lab1\\Assignment1\\First\\src\\funfact.json";
+        String filePath = "src\\funfact.json";
         String javaVer = System.getProperty("java.version");
-        String[] frames = {"-", "\\", "|", "/"};
+        String[] frames = {"-", "\\", "|", "/"}; //for loading animation
         String[] art = {
             "\u001b[100m                                     )                    \u001b[0m",
             "\u001b[100m                            )      ((     (               \u001b[0m",
