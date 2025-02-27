@@ -28,6 +28,7 @@ public class MyFirstProgram {
             "\u001b[100m    ||| \\       __/_||  __||__                            \u001b[0m",
             "\u001b[100m-----||-/------`-._/||-o--o---o---                        \u001b[0m"
         }; //https://www.asciiart.eu/computers/computers
+        String favColour;
 
 
         //Loading Animation
@@ -48,6 +49,8 @@ public class MyFirstProgram {
             System.out.println(line);
             Thread.sleep(200);
         }
+
+        Thread.sleep(500);
 
 
         //Set up scanner for user input
@@ -71,21 +74,32 @@ public class MyFirstProgram {
 
             
         //Personilized Greeting
-        System.out.println("\n Hi \u001B[35m" + name + "\u001B[0m! I'm glad to meet you");
+        System.out.println("\n Hi \u001B[35m" + name + "\u001B[0m! I'm glad to meet you!\n");
 
         //Ask user their fav color
+        System.out.println("What's ur fav color from RGB? (r/g/b)");
+        System.out.print("Please type your color: ");
+        favColour = scanner.nextLine().toLowerCase();
+        
+        switch (favColour) {
+            case "r" -> System.out.println("\u001B[31m");
+            case "g" -> System.out.println("\u001B[32m");
+            default -> System.out.println("\u001B[34m");
+        }
 
-
-        //change output display into its color
+        //change output display into its colour
             
         //Displaying Funfact about Java
         FunFactReader funFactReader = new FunFactReader(filePath);
-        System.out.println("Here's a funJavaFact: ");
+        System.out.println("\u001B[1m Here's a funJavaFact: \n");
         System.out.println(funFactReader.getRandomFact());
+        System.out.println("\u001B[0m");
     
         scanner.close();
 
-        System.out.println("You're running on : " + javaVer + " JRE version");
+        System.out.println("\u001B[3m You're running on : " + javaVer + " Java version \u001B[0m");
+        System.out.println("\n \u001B[1m \u001B[35mSee u Again!!!\u001B[0m");
+        
 
     }
 }
